@@ -1,0 +1,108 @@
+The file phone.py contains:
+import re
+filename = 'my-directory-list.txt'
+pattern  = '^((\+){0,1}91(\s){0,1}(\-){0,1}(\s){0,1}){0,1}98(\s){0,1}(\-){0,1}(\s){0,1}[1-9]{1}[0-9]{7}$'
+new_file = []
+
+# Make sure file gets closed after being iterated
+with open(filename, 'r') as f:
+   # Read the file contents and generate a list with each line
+   lines = f.readlines()
+
+# Iterate each line
+for line in lines:
+
+    # Regex applied to each line 
+    match = re.search(pattern, line)
+    if match:
+        # Make sure to add \n to display correctly when we write it back
+        new_line = match.group() + '\n'
+        print new_line
+        new_file.append(new_line)
+
+with open(filename, 'w') as f:
+     # go to start of file
+     f.seek(0)
+     # actually write the lines
+     f.writelines(new_file)
+The file my-directory-list.txt contains:
+
+The file niki.js contains:
+fs = require('fs');
+
+fs.readdir(process.cwd(), function (err, files) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(files);
+  fs.readFile('/home/madguy02/Documents/oopj.pdf','utf8',function(err,data){
+      if (err)
+      {
+        return console.log(err)
+
+      }
+         console.log(data);
+  });
+ 
+});
+
+The file new.js contains:
+var fs = require('fs'),
+    async = require('async');
+
+var dirPath = '/home/madguy02/Documents/'; //provice here your path to dir
+
+fs.readdir(dirPath, function (err, filesPath) {
+    if (err) throw err;
+    filesPath = filesPath.map(function(filePath){ //generating paths to file
+        return dirPath + filePath;
+    });
+    async.map(filesPath, function(filePath, cb){ //reading files or dir
+        fs.readFile(filePath, 'utf8', cb);
+    }, function(err, results) {
+        console.log(results); //this is state when all files are completely read
+        //res.send(results); //sending all data to client
+    });
+});
+The file niki.txt contains:
+996624567
+9962647654
+9435509343
+9435635187
+manish kakoti
+
+
+The file niki.py contains:
+import os
+import sys
+import re
+
+walk_dir = '/home/madguy02/Documents/niki/'
+
+print('walk_dir = ' + walk_dir)
+
+
+walk_dir = os.path.abspath(walk_dir)
+print('walk_dir (absolute) = ' + os.path.abspath(walk_dir))
+
+for root, subdirs, files in os.walk(walk_dir):
+    print('--\nroot = ' + root)
+    list_file_path = os.path.join(root, 'my-directory-list.txt')
+    print('list_file_path = ' + list_file_path)
+
+    with open(list_file_path, 'wb') as list_file:
+        for subdir in subdirs:
+            print('\t- subdirectory ' + subdir)
+
+        for filename in files:
+            file_path = os.path.join(root, filename)
+
+            print('\t- file %s (full path: %s)' % (filename, file_path))
+
+            with open(file_path, 'rb') as f:
+                f_content = f.read()
+                list_file.write(('The file %s contains:\n' % filename).encode('utf-8'))
+        
+                list_file.write(f_content)
+                list_file.write(b'\n')
