@@ -2,7 +2,9 @@ import os
 import sys
 import re
 
-walk_dir = '/home/madguy02/Documents/niki/'
+
+#walk_dir = '/home/madguy02/Documents/niki/'
+walk_dir=raw_input("enter the directory structure:")
 
 print('walk_dir = ' + walk_dir)
 
