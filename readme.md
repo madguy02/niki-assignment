@@ -7,6 +7,6 @@ running phone.py will give you phone numbers of indian style
 
 **phone.py is actually a scrapper for the text file with a regex written to find pattern of indian phone numbers
 ** provide your directories accordingly in fields like walk_dir ,and proper filename to phone.py program
-
+** imported niki.py to phone.py,if not required,you can directly call two different programs independently
 
 !!!it runs successfully
