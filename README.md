@@ -9,4 +9,10 @@ running phone.py will give you phone numbers of indian style
 ** provide your directories accordingly in fields like walk_dir ,and proper filename to phone.py program
 ** imported niki.py to phone.py,if not required,you can directly call two different programs independently
 
+
+#It is made into a pypi package manager link:'https://pypi.python.org/pypi?name=niki&version=0.1&:action=display'
+#there are scopes to this project,we can add email finders as well as name finders and many other things accordingly
+
 !!!it runs successfully
+
+*contributions are welcome
