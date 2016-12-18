@@ -9,5 +9,5 @@ setup(
   url = 'https://github.com/madguy02/niki-assignment',
   download_url = 'https://github.com/madguy02/niki-assignment/tarball/0.1', 
   keywords = ['testing', 'logging', 'recursive search'], 
-  classifiers = [],
+  #classifiers = [],
 )
